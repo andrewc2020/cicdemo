@@ -32,7 +32,7 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: andrewc2020/ci-cd
+      - image: ci-cd
         name: ci-cd
         ports:
         - containerPort: 3000
