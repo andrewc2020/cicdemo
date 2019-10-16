@@ -15,7 +15,7 @@ jobs:
       REG_ID: ci-cd
       REG_ID_PROD: ci-cd-prod
       IMG_TAG: 0.1.0
-      PROJECT_NAME: ci-cd
+      PROJECT_NAME: MyCal
       DEPLOYMENT_ENVIRONMENT: staging
     steps:
       - checkout
