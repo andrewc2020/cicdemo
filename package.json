@@ -4,7 +4,7 @@
   "description": "Tutorial leading to a deployment of a simple Node.js app to gcloud",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon src/index.js",
     "test": "mocha"
   },
   "keywords": [
@@ -21,6 +21,7 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "mocha": "^5.2.0",
+    "nodemon": "^1.19.4",
     "request": "^2.88.0"
   }
 }
