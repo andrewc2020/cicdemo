@@ -5,8 +5,7 @@ import 'dotenv/config';
 import morgan from 'morgan';
 const path = require('path');
 
-console.log('Hello Node.js project.');
-console.log(process.env.MY_SECRET);
+
 
 // Instantiate express
 const app = express();
