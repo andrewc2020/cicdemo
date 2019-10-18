@@ -1,34 +1,34 @@
-
+import express from 'express';
+import bodyParser from 'body-parser';
+import routes from './routes/index';
 import 'dotenv/config';
-const express = require('express');
+import morgan from 'morgan';
 const path = require('path');
-const morgan = require('morgan');
-const bodyParser = require('body-parser');
 
 console.log('Hello Node.js project.');
 console.log(process.env.MY_SECRET);
 
-/* eslint-disable no-console */
-
-const port = process.env.PORT || 3000;
+// Instantiate express
 const app = express();
-
-app.use(morgan('dev'));
+// Set our port
+const port = process.env.PORT || 3000;
+// Configure app to user bodyParser
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: 'true' }));
-app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
-
+app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, './')));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './index.html'));
-});
+app.get('/',(req,res)=>{
+    sendFile(path.join(__dirname, './index.html'));
+})
 
-app.listen(port, (err) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log(`App at: http://localhost:${port}`);
-  }
+// Register our routes in app
+
+app.use('/', routes);
+
+// Start our server
+app.listen(port, () => {
+    console.log(`Server started on port ${port}`);
 });
-module.exports = app;
+// Export our app for testing purposes
+export default app;
