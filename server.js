@@ -1,7 +1,12 @@
+
+import 'dotenv/config';
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+
+console.log('Hello Node.js project.');
+console.log(process.env.MY_SECRET);
 
 /* eslint-disable no-console */
 

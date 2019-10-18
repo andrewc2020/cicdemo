@@ -4,7 +4,7 @@
   "description": "Tutorial leading to a deployment of a simple Node.js app to gcloud",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon src/index.js",
+    "start": "nodemon --exec babel-node server.js",
     "test": "mocha"
   },
   "keywords": [
@@ -14,11 +14,15 @@
   "author": "Collins",
   "license": "MIT",
   "dependencies": {
+    "@babel/core": "^7.6.4",
     "body-parser": "^1.17.2",
+    "dotenv": "^8.2.0",
     "express": "^4.15.3",
     "morgan": "^1.8.2"
   },
   "devDependencies": {
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
     "chai": "^4.1.2",
     "mocha": "^5.2.0",
     "nodemon": "^1.19.4",
