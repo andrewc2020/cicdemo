@@ -1,9 +1,9 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import routes from './routes/index';
+import routes from './src/routes/index';
 import 'dotenv/config';
 import morgan from 'morgan';
-const path = require('path');
+import path from 'path';
 
 
 

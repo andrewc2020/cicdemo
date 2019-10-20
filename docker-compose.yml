@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  nodejs-webpack-es6-app:
+    image: andrewc2020/ci-cd
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 2000:3000

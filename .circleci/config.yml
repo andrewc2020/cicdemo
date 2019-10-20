@@ -27,7 +27,7 @@ jobs:
       - run:
           name: Install node packages
           command: |
-            yarn install
+            npm install
       
       - run:
           name: Start app
@@ -36,7 +36,7 @@ jobs:
       - run:
           name: Run tests
           command: |
-            yarn test
+            npm test
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}

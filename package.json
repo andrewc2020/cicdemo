@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon --exec babel-node server.js",
-    "test": "mocha --require @babel/register  --exit"
+    "test": "mocha --require @babel/register  --exit",
+    "execute": "webpack && node build/app.bundle.js"
   },
   "keywords": [
     "gcloud",
@@ -21,7 +22,8 @@
     "express": "^4.15.3",
     "express-validator": "^6.2.0",
     "lodash": "^4.17.15",
-    "morgan": "^1.8.2"
+    "morgan": "^1.8.2",
+    "webpack": "^4.41.2"
   },
   "devDependencies": {
     "@babel/node": "^7.6.3",
