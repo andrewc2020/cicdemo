@@ -15,15 +15,14 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(morgan('dev'));
-app.use(express.static(path.join(__dirname, './')));
-
-app.get('/',(req,res)=>{
-    sendFile(path.join(__dirname, './index.html'));
-})
-
 // Register our routes in app
 
 app.use('/', routes);
+app.use(express.static(path.join(__dirname, './')));
+
+
+
+
 
 // Start our server
 app.listen(port, () => {

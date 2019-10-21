@@ -4,10 +4,16 @@
   "description": "Tutorial leading to a deployment of a simple Node.js app to gcloud",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon --exec babel-node server.js",
+    "start": "npm run watch",
+    "watch": "npm-run-all --parallel watch:server watch:build",
+    "watch:build": "webpack --config webpack.config.js --progress --colors --watch",
+    "watch:server": "nodemon \"./build/app.bundle.js\" --watch \"./build/*\"",
+    
     "test": "mocha --require @babel/register  --exit",
     "execute": "webpack && node build/app.bundle.js",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "postinstall": "link-module-alias",
+    "preinstall": "command -v link-module-alias && link-module-alias clean || true"
   },
   "keywords": [
     "gcloud",
@@ -23,7 +29,11 @@
     "express": "^4.15.3",
     "express-validator": "^6.2.0",
     "lodash": "^4.17.15",
-    "morgan": "^1.8.2"
+    "morgan": "^1.8.2",
+    "npm-run-all": "^4.1.5"
+  },
+  "_moduleAliases": {
+    "ControlPath": "src/routes/controllers"
   },
   "devDependencies": {
     "@babel/node": "^7.6.3",
@@ -32,6 +42,7 @@
     "babel-loader": "^8.0.6",
     "babel-polyfill": "^6.26.0",
     "chai": "^4.2.0",
+    "link-module-alias": "^1.2.0",
     "mocha": "^5.2.0",
     "nodemon": "^1.19.4",
     "request": "^2.88.0",

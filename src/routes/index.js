@@ -1,8 +1,13 @@
 import { Router } from 'express';
 import StudentController from 'ControlPath/studentcontroller';
+import path from 'path';
 
 const routes = Router();
 
+routes.get('/', (req,res)=>{
+    
+    res.send( 'hello');
+})
 routes.get('/students/', StudentController.getAllStudents);
 routes.get('/students/:id', StudentController.getSingleStudent);
 routes.get('/students/sortby/age',StudentController.getStudentsByAge);
