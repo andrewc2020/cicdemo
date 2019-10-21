@@ -1,4 +1,4 @@
-import students from '../dummy/students.js';
+import students from './dummy/students';
 import {check,validationResult} from 'express-validator';
 import _ from 'lodash';
 

@@ -8,18 +8,22 @@ module.exports = {
             './server.js'
         ]
     },
+    resolve: {
+        alias: {
+          ControlPath: path.resolve(__dirname, 'src/routes/controllers/'),
+          
+        }
+      },
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'app.bundle.js'
     },
     module: {
-        loaders: [{
+        rules: [{
             test: /\.js?$/,
             exclude: /node_modules/,
-            loader: 'babel-loader',
-            query: {
-                presets: ['env']
-            }
+            loader: 'babel-loader'
+            
         }]
     }
 };
