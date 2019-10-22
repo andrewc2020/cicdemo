@@ -11,7 +11,7 @@ module.exports = {
     },
     resolve: {
         alias: {
-          ControlPath: path.resolve(__dirname, '/src/routes/controllers/'),
+          ControlPath: path.resolve(__dirname, 'src/routes/controllers/'),
           
         }
       },
