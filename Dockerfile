@@ -1,6 +1,6 @@
 FROM node
 ENV NPM_CONFIG_LOGLEVEL warn
-RUN mkdir /app
+RUN mkdir /app -p
 EXPOSE 3000
 WORKDIR /app
 ADD package.json  /app
