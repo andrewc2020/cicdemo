@@ -10,7 +10,7 @@
     "watch:server": "nodemon \"./build/app.bundle.js\" --watch \"./build/*\"",
     "test": "webpack --config webpack.config.js && mocha --require @babel/register --exit",
     "build": "webpack --config webpack.config.js",
-    "execute":"webpack --config webpack.config.js && ./build/app.bundle.js",
+    "execute":"webpack --config webpack.config.js && node ./build/app.bundle.js",
     "postinstall": "link-module-alias",
     "preinstall": "command -v link-module-alias && link-module-alias clean || true"
   },

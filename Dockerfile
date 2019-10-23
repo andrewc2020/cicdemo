@@ -6,4 +6,4 @@ WORKDIR /app
 ADD package.json  /app
 RUN npm install --production
 COPY . /app
-ENTRYPOINT ["npm", "run ","execute"]
+ENTRYPOINT ["npm","run","execute"]
