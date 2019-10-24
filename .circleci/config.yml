@@ -29,15 +29,15 @@ jobs:
           command: |
             npm install
      
-      
-      - run:
-          name: Start app
-          command: |
-            npm start &
       - run:
           name: Run tests
           command: |
             npm test 
+      - run:
+          name: Start app
+          command: |
+            npm start &
+      
       
       - restore_cache:
           keys:
