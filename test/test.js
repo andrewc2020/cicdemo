@@ -103,5 +103,21 @@ describe("Students", () => {
 
     })
 }); // end of describe Post
-
+describe('PUT student',() =>{
+    it('should update a student',(done)=>{
+        const data = {student:{ 
+            id:1, 
+            name:'Fred Bloggs', 
+            age:22
+        }};
+        chai.request(app)
+        .put('/students/1')
+        .set('content-type','application/json')
+        .send({data})
+        .end((err,res) =>{
+            res.should.have.status(200);
+            done();
+        })
+    })
+})
 });
