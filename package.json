@@ -32,7 +32,9 @@
     "npm-run-all": "^4.1.5"
   },
   "_moduleAliases": {
-    "ControlPath": "src/routes/controllers"
+    "ControlPath": "src/routes/controllers",
+    "/usr/bin/node": "/usr/bin/nodejs",
+    "node": "/usr/bin/nodejs"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
