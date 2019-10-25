@@ -29022,7 +29022,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = Object(express__WEBPACK_IMPORTED_MODULE_0__["Router"])();
 routes.get('/', function (req, res) {
-  res.send('hello');
+  res.send('<ul>usage : <li>GET /students</li><li> GET /students/:id</li><li>GET /students/sortby/age</li><li>GET /students/sortby/name</li><li>POST /students/create/</li><li>PUT /students/:id</li><li>DELETE /students/:id</li></ul>');
 });
 routes.get('/students/', ControlPath_studentcontroller__WEBPACK_IMPORTED_MODULE_1__["default"].getAllStudents);
 routes.get('/students/:id', ControlPath_studentcontroller__WEBPACK_IMPORTED_MODULE_1__["default"].getSingleStudent);
